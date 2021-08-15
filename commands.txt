@@ -1,0 +1,78 @@
+1-at the start we can specify who am i  to git      by these commands:
+$ git config --global user.name ="Asif"
+$ git config --global user.email ="asifkhan88012@gmail.com"
+
+2-for checking we can type command:
+$ git config --global user.name
+$ git config --global user.email
+$ git config --list
+
+
+three stage architecture:
+1-Working directory: opening a folder, starting a project in it in your local computrer.
+2-Staging Area: The files from working directroy you want to commit, you are staging them.Staged files can be committed later.
+3-Git directory(repository): .git hidden folder, all the files are compressed.
+
+Note: you can commit directly from working directory to git directory
+
+
+git status cammand to check whether the directory u r inside now   is a git directory or not.
+
+git init is command to initialize the transtion to becoming a git directory.(u have to be inside the directory)
+
+$ git add --a
+$ git add --a (stages all the files in the working directory)
+git add file_name  (stages one file)
+
+$ git commit -m "Initial Commit"        commits(takes the snapshot )
+git log    gives u the message of commit , the author name ets
+
+rm -rf .git  (linux command)   removes the .git (hidden file), now ur tracking is no longer there
+now if check status  it will say this "fatal: not a git repository (or any of the parent directories): .git
+"
+
+pwd (present working directory)(Linux command)
+
+
+git clone url_from_github :  you can clone directory from github to your work directory
+
+touch hi.txt  (linux command) creates blank file named hi.txt
+touch .gitignore  creates a file  inside which if u right the name of a file   that file will be ignored by the git
+note: lets say u want to ignore a specific type of extension file u can do so by  *.log, can also ignore a directory, put a name of a folder and ignore it  foldername/
+
+
+
+
+git diff:  let's say u staged a file and before comitting u modified it  so now if u run this command u ll see both staged and modified versions.
+	   So git diff command deferentiate between working directory and   staging area
+
+
+git diff --staged:  let's u  compare previous commit with newly staged 
+
+git commit -a -m "direct commit "   : commits all the TRACKED files without the need of staging them 
+
+git rm --cached hello.txt :      lets say i have a hello.txt file which i was tracking staging and committing before but now i put its name in .gitignore, 
+				(then make some changes in hello.txt) now when check git status it'll still say modified. so in order to .gitgnore work for this u have to use this command.
+git mv hello1.txt hello1_renamed.txt :  for renaming hello1.txt  to hello1_renamed.txt from git use this command. it renames the file as well as stage it also.
+					if u rename it from file explorer when u see git status  it ll  old name file removed/deleted and new name file added.
+
+
+
+git config --global alias.alias_name 'git command'    lets say u want to check status repeatedly so its better that u shorten the command from status to st  so in place of alias_name put st
+							and in place of git command put status
+
+
+git checkout -b branch_name  :   this command creates and enters  a branch of the code with name as branch_name
+
+git checkout main:    if u want to go back to master/main branch
+
+git checkout branch_name: to enter the branch branch_name
+
+note: the changes  made by u in branch wont reflect in the master/main. When u ll switch from newbranch to master u ll see that everything is reverted to master 
+
+git merge newbranch:  lets say u are in master branch and u have already made chages in newbranch and committed them           to bring those changes in master use this commmand.
+git remote add origin https://github.com/khan88012/repository_name.git        creating remote for github
+git push origin HEAD:main  pushes without   lf to crlf warning
+git remote set-url origin git://new.url.here      resets remote named origin to new url
+
+testing to commit
